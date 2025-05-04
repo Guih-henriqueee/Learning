@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "test": "jest",
+    "lint": "eslint . --ext .ts,.tsx,.js",
     "start": "node dist/server.js",
     "build": "tsc",
     "prepare": "husky install"
