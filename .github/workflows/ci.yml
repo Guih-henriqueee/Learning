@@ -21,7 +21,7 @@
           run: |
             cd backend
             npm install --save-dev eslint @eslint/js
-            npm run lint
+            npm run lint --fix
         - name: Run Tests (Backend)
           run: |
             cd backend
