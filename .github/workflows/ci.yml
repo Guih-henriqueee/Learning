@@ -19,10 +19,11 @@ jobs:
           npm install
       - name: Run ESLint (Backend)
         run: |
-          npm install --save-dev eslint
-          npx eslint --init
+          cd backend
+          npm run lint
       - name: Run Tests (Backend)
         run: |
+          cd backend
           npm run test
 
   frontend:
@@ -39,8 +40,9 @@ jobs:
           npm install
       - name: Run ESLint (Frontend)
         run: |
-          npm install --save-dev eslint
-          npx eslint --init
+          cd frontend
+          npm run lint
       - name: Run Tests (Frontend)
         run: |
+          cd frontend
           npm run test
