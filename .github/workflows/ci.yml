@@ -13,11 +13,22 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+    step:  
       - name: Install Backend Dependencies
         run: |
           cd backend
           npm install
+    step:
       - name: Install Frontend Dependencies
         run: |
           cd frontend
           npm install
+    step:
+      - name: ES Lint
+      - run: |
+          npm run lint
+    step:
+      - name: Run Tests
+      - run: |
+          npm run test
+    
