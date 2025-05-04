@@ -7,12 +7,6 @@ const app = express();
 app.use(express.json());
 
 
-app.get('/', (req, res) => {
-    res.send("Hello World")
-})
-
-
-
 const PORT = process.env.BACKEND_PORT || 3000;
 
 app.listen(PORT, () => {

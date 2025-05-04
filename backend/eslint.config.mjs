@@ -1,38 +1,48 @@
 /* eslint-disable */
-import eslint from '@eslint/js'
+import js from "@eslint/js";
+import tseslint from "typescript-eslint";
+import { defineConfig } from "eslint/config";
 
-export default [
-    eslint.configs.recommended,
-    {
-        ignores: [
-            'build/',
-            'dist/',
-            'out/',
-            '*.min.js',
-            '*.bundle.js',
-            '*.map',
-            '.eslintrc.js',
-            'eslint.config.js',
-            '**/backend/__tests__/',
-            'commit-lint.config.js'
-        ],
-        rules: {
-            semi: ['error', 'always'],
-            quotes: ['error', 'single']
-        },
-        env: {
-            node: true,
-        },
-        languageOptions:{
-            globals: {
-                describe: 'readonly',
-                it: 'readonly',
-                expect: 'readonly',
-                exports: 'readonly',
-                require: 'readonly',
-                process: 'readonly',
-                console: 'readonly',
-            },
+export default defineConfig([
+  {
+    files: ["**/*.{js,mjs,cjs,ts}"],
+    plugins: { js },
+    extends: ["js/recommended"],
+  },
+  {
+    files: ["**/*.{js,mjs,cjs,ts}"],
+    languageOptions: {
+      globals: {
+        describe: "readonly",
+        it: "readonly",
+        expect: "readonly",
+        exports: "readonly",
+        require: "readonly",
+        process: "readonly",
+        console: "readonly",
+      },
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: "module",
+      },
     },
-  }
-]
+    rules: {
+      "quotes": ["error", "single"],  
+      "semi": ["error", "always"],    
+      "no-undef": "error",            
+    },
+    ignores: [
+      "build/",
+      "dist/",
+      "out/",
+      "*.min.js",
+      "*.bundle.js",
+      "*.map",
+      ".eslintrc.js",
+      "eslint.config.js",
+      "**/backend/__tests__/",
+      "commit-lint.config.js",
+    ],
+  },
+  tseslint.configs.recommended, 
+]);
