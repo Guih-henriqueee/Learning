@@ -1,0 +1,23 @@
+{
+  "name": "freestack-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.8.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "commitlint": "^19.8.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "vite": "^5.0.0"
+  }
+}
