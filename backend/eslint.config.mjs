@@ -1,4 +1,4 @@
-import { eslint } from '@eslint/js'
+import eslint  from '@eslint/js'
 
 export default [
   eslint.configs.recommended,
