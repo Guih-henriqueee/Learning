@@ -1,3 +1,4 @@
+/* eslint-disable */
 import eslint  from '@eslint/js'
 
 export default [
@@ -18,6 +19,18 @@ export default [
     rules: {
       semi: ['error', 'always'],
       quotes: ['error', 'single']
-    }
+    },
+    env: {
+        node: true,  
+      },
+      globals: {
+        describe: 'readonly',  
+        it: 'readonly',        
+        expect: 'readonly',    
+        exports: 'readonly',
+        require: 'readonly',
+        process: 'readonly',
+        console: 'readonly',
+      },
   }
 ]
