@@ -20,7 +20,7 @@ jobs:
       - name: Run ESLint (Backend)
         run: |
           npm install --save-dev eslint
-          npx run lint
+          npx eslint --init
       - name: Run Tests (Backend)
         run: |
           npm run test
@@ -40,7 +40,7 @@ jobs:
       - name: Run ESLint (Frontend)
         run: |
           npm install --save-dev eslint
-          npx run lint
+          npx eslint --init
       - name: Run Tests (Frontend)
         run: |
           npm run test
