@@ -20,7 +20,7 @@
         - name: Run ESLint (Backend)
           run: |
             cd backend
-            npm install --save-dev eslint
+            npm install --save-dev eslint @eslint/js
             npm run lint
         - name: Run Tests (Backend)
           run: |
