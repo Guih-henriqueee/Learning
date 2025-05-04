@@ -21,10 +21,19 @@ jobs:
         run: |
           cd frontend
           npm install
-      - name: ES Lint
-      - run: |
+      - name: Run ESLint (Backend)
+        run: |
+          cd backend
           npm run lint
-      - name: Run Tests
-      - run: |
+      - name: Run ESLint (Frontend)
+        run: |
+          cd frontend
+          npm run lint
+      - name: Run Tests (Backend)
+        run: |
+          cd backend
           npm run test
-    
+      - name: Run Tests (Frontend)
+        run: |
+          cd frontend
+          npm run test
