@@ -1,5 +1,6 @@
 /* eslint-disable */
 import js from "@eslint/js";
+import globals from "globals";
 import tseslint from "typescript-eslint";
 import { defineConfig } from "eslint/config";
 
@@ -13,6 +14,7 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,ts}"],
     languageOptions: {
       globals: {
+        ...globals.browser, 
         describe: "readonly",
         it: "readonly",
         expect: "readonly",
@@ -29,7 +31,7 @@ export default defineConfig([
     rules: {
       "quotes": ["error", "single"],  
       "semi": ["error", "always"],    
-      "no-undef": "error",            
+      "no-undef": "error", 
     },
     ignores: [
       "build/",
@@ -44,5 +46,5 @@ export default defineConfig([
       "commit-lint.config.js",
     ],
   },
-  tseslint.configs.recommended, 
+  tseslint.configs.recommended,
 ]);
